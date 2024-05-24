@@ -6,10 +6,10 @@ provider "snowflake" {
 }
 
 resource "snowflake_warehouse" "my_warehouse" {
-  name            = "MY_WAREHOUSE"
-  size            = "XSMALL"
-  auto_suspend    = 60
-  auto_resume     = true
+  name                = "MY_WAREHOUSE"
+  size                = "XSMALL"
+  auto_suspend        = 60
+  auto_resume         = true
   initially_suspended = true
 }
 
@@ -18,6 +18,6 @@ resource "snowflake_database" "my_database" {
 }
 
 resource "snowflake_schema" "my_schema" {
-  name      = "MY_SCHEMA"
-  database  = snowflake_database.my_database.name
+  name     = "MY_SCHEMA"
+  database = snowflake_database.my_database.name
 }
